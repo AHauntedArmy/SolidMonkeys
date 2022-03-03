@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidMonkeys", "SolidMonkeys\SolidMonkeys.csproj", "{CAAF551C-D712-4B72-8E9C-E94AF0C5C487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAAF551C-D712-4B72-8E9C-E94AF0C5C487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAF551C-D712-4B72-8E9C-E94AF0C5C487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAF551C-D712-4B72-8E9C-E94AF0C5C487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAF551C-D712-4B72-8E9C-E94AF0C5C487}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F449884-AFBC-4923-8621-A9A0DA26B225}
+	EndGlobalSection
+EndGlobal
