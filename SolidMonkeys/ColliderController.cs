@@ -14,56 +14,53 @@ namespace SolidMonkeys
 
 		private void Start()
 		{
-			GameObject head = gameObject.transform.Find("rig/body/head/SpeakerHeadCollider")?.gameObject;
-			GameObject body = gameObject.transform.Find("rig/body/BodyTrigger")?.gameObject;
+			Transform head = gameObject.transform.Find("rig/body/head/SpeakerHeadCollider");
+			Transform body = gameObject.transform.Find("rig/body/BodyTrigger");
 
 			LayerMask  toucableLayer = LayerMask.NameToLayer("Gorilla Object");
 
 			if (head != null) {
 				Debug.Log("head found, cloning head");
-				headCollider = GameObject.Instantiate(head, head.transform);
+				headCollider = GameObject.Instantiate(head.gameObject, head.parent);
 
 				if (headCollider != null) {
-					headCollider.SetActive(this.enabled);
 					headCollider.layer = toucableLayer;
 
 					var headCol = head.GetComponent<SphereCollider>();
 					if (headCol != null)
 						headCol.isTrigger = false;
+					
+					headCollider.SetActive(this.enabled);
 				}
+
 			}
 
 			if (body != null) {
 				Debug.Log("body found, cloning body");
-				bodyCollider = GameObject.Instantiate(body, body.transform);
+				bodyCollider = GameObject.Instantiate(body.gameObject, body.parent);
 
 				if (bodyCollider != null) {
-					bodyCollider.SetActive(this.enabled);
 					bodyCollider.layer = toucableLayer;
 
 					var bodyCol = bodyCollider.GetComponent<CapsuleCollider>();
 					if (bodyCol != null)
 						bodyCol.isTrigger = false;
+					
+					bodyCollider.SetActive(this.enabled);
 				}
 			}
 		}
 
 		private void OnEnable()
 		{
-			if (bodyCollider != null)
-				bodyCollider.SetActive(true);
-
-			if (headCollider != null)
-				headCollider.SetActive(true);
+			bodyCollider?.SetActive(true);
+			headCollider?.SetActive(true);
 		}
 
 		private void OnDisable()
 		{
-			if (bodyCollider != null)
-				bodyCollider.SetActive(false);
-
-			if (headCollider != null)
-				headCollider.SetActive(false);
+			bodyCollider?.SetActive(false);
+			headCollider?.SetActive(false);
 		}
 	}
 }
