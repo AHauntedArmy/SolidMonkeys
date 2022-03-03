@@ -20,9 +20,6 @@ namespace SolidMonkeys
 				return;
 
 			Patches.VRRigColliderPatch.ModEnabled = true;
-
-			if(inRoom)
-				ToggleColliders(true);
 		}
 
 		void OnDisable()

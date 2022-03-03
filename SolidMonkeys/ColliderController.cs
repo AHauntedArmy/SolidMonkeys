@@ -21,7 +21,7 @@ namespace SolidMonkeys
 
 			if (head != null) {
 				Debug.Log("head found, cloning head");
-				headCollider = GameObject.Instantiate(head, head.transform.parent);
+				headCollider = GameObject.Instantiate(head, head.transform);
 
 				if (headCollider != null) {
 					headCollider.SetActive(this.enabled);
@@ -35,7 +35,7 @@ namespace SolidMonkeys
 
 			if (body != null) {
 				Debug.Log("body found, cloning body");
-				bodyCollider = GameObject.Instantiate(body, body.transform.parent);
+				bodyCollider = GameObject.Instantiate(body, body.transform);
 
 				if (bodyCollider != null) {
 					bodyCollider.SetActive(this.enabled);
