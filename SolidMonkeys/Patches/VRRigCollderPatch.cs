@@ -1,9 +1,4 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using UnityEngine;
 
 namespace SolidMonkeys.Patches
 {
@@ -25,7 +20,7 @@ namespace SolidMonkeys.Patches
 			var cc = __instance.gameObject.AddComponent<ColliderController>();
 			cc.enabled = ModEnabled;
 
-			Debug.Log("adding collider component");
+			// Debug.Log("adding collider component");
 		}
 	}
 }

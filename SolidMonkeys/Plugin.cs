@@ -13,7 +13,7 @@ namespace SolidMonkeys
 	public class SolidMonkeysPlugin : BaseUnityPlugin
 	{
 		bool inRoom;
-
+		CollisionHandler colScript = null;
 		void OnEnable()
 		{
 			if (!inRoom)
@@ -34,6 +34,10 @@ namespace SolidMonkeys
 		{
 			Patches.HarmonyPatches.ApplyHarmonyPatches();
 			Patches.VRRigColliderPatch.ModEnabled = this.enabled;
+
+			colScript = GorillaLocomotion.Player.Instance.gameObject.AddComponent<CollisionHandler>();
+			colScript.enabled = this.enabled;
+
 			inRoom = true;
 		}
 
@@ -41,6 +45,8 @@ namespace SolidMonkeys
 		public void OnLeave(string gamemode)
 		{
 			Patches.HarmonyPatches.RemoveHarmonyPatches();
+			GameObject.Destroy(colScript);
+
 			inRoom = false;
 		}
 
@@ -52,6 +58,9 @@ namespace SolidMonkeys
 
 			foreach (var cc in myCols)
 				cc.enabled = toEnable;
+
+			if (colScript != null)
+				colScript.enabled = toEnable;
 		}
 	}
 }

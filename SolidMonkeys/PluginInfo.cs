@@ -5,6 +5,6 @@ namespace SolidMonkeys
 	{
 		public const string GUID = "com.ahauntedarmy.gorillatag.solidmonkeys";
 		public const string Name = "SolidMonkeys";
-		public const string Version = "1.0.0";
+		public const string Version = "1.0.1";
 	}
 }
